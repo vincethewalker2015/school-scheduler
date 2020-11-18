@@ -1,0 +1,21 @@
+<header>
+  <nav>
+    <div class="nav-wrapper blue darken-4">
+      <div class="container">
+        <a href="#!" class="brand-logo">Imperial University</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to "Courses", courses_path %></li>
+          <li><%= link_to "Enrollments", "#" %></li>
+          <li><%= link_to "Account", "#" %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="sidenav white blue darken-4" id="mobile-demo">
+    <li><%= link_to "Courses", courses_path %></li>
+    <li><%= link_to "Enrollments", "#" %></li>
+    <li><%= link_to "Account", "#" %></li>
+  </ul>
+</header>
