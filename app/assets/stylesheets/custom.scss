@@ -18,3 +18,30 @@ main {
 .white a{
   color: #fff !important;
 }
+
+// Navbar Dropdown
+
+ul .dropdown-family {
+  margin-top: 10px;
+  li {
+    border: .5px solid #fff;
+    border-radius: 3px;
+  }
+}
+
+#mobile-demo li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.account-head {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 1rem;
+}
+
+//Icons
+
+.material-icons {
+  color: white !important;
+}
