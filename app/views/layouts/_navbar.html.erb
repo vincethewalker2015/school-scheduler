@@ -1,0 +1,42 @@
+<header>
+  <ul id="dropdown1" class="dropdown-content blue darken-4 white">
+    <span class="account-head">Account</span>
+    <div class="dropdown-family">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </div>
+  </ul>
+
+  <ul id="dropdown2" class="dropdown-content blue darken-4 white">
+    <div class="dropdown-family">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </div>
+  </ul>
+
+  <nav>
+    <div class="nav-wrapper blue darken-4">
+      <div class="container">
+        <a href="#!" class="brand-logo">Imperial University</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to "Courses", courses_path %></li>
+          <li><%= link_to "Enrollments", "#" %></li>
+          <!-- DROPDOWN -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </div>
+  
+
+  <ul class="sidenav white blue darken-4" id="mobile-demo">
+    <li><%= link_to "Courses", courses_path %></li>
+    <li><%= link_to "Enrollments", "#" %></li>
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li> 
+  </ul>
+  </nav>
+</header>
