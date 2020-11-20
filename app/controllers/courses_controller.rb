@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
 
   def create 
     @course = Course.new(course_params)
+    @course.student = current_user
     if @course.save
       flash[:notice] = "Course Added"
       redirect_to course_path(@course)

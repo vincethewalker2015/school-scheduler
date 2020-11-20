@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col s12">
+    <%= form_for(@student, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="input-field">
+      <div class="col s6">
+        <%= f.label :name %>
+      </div>
+      <div class="input-field">
+        <%= f.text_field :name, class: 'validate black-text', type: 'text', placeholder: "Enter your name" %>
+      </div>
+      </div>
+      <div class="input-field">
+        <div class="col s6">
+          <%= f.label :email %>
+        </div>
+        <div class="col-md-8">
+          <%= f.email_field :email, class: 'validate black-text', placeholder: "Enter your e-mail address" %>
+        </div>
+      </div>
+      <div class="input-field">
+        <div class="col s6">
+          <%= f.label :password %>
+        </div>
+        <div class="col-md-8">
+        <%= f.password_field :password, class: 'validate black-text', placeholder: "Create a Password..." %>
+        </div>
+      </div>
+      <div class="input-field">
+        <div class="col s6">
+          <%= f.label :password_confirmation %>
+        </div>
+        <div class="col-md-8">
+          <%= f.password_field :password_confirmation, class: 'validate black-text', placeholder: "Please re-enter your password.." %>
+        </div>
+      </div>
+      <div class="input-field">
+        <div class="col-md-offset-2 col-md-10">
+          <%= f.submit "Create your Student profile", class: "waves-effect waves-light btn  light-blue darken-4" %>
+          <%= link_to "Back to Home Page", root_path, class: "waves-effect waves-light btn orange darken-3" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
