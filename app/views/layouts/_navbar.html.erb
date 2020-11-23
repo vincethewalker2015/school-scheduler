@@ -31,9 +31,10 @@
         <ul class="right hide-on-med-and-down">
          <% if current_student %>
             <li>Student <%= current_student.name %></li>
+            <li><%= link_to "Courses", courses_path %></li>
+            <li><%= link_to "Enrollments", "#" %></li>
           <% end %>
-          <li><%= link_to "Courses", courses_path %></li>
-          <li><%= link_to "Enrollments", "#" %></li>
+          
           
           <!-- DROPDOWN -->
 
