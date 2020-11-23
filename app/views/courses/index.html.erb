@@ -4,50 +4,35 @@
   </div>
 </div>
 
-<div class="row">
-    <div class="col s4 m4">
-      <div class="card green darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Code: CS111</span>
-          <p>Name: Intro into computer science</p>
-          <p>Description: An Intro into Computer Science</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-    <div class="col s4 m4">
-      <div class="card green darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Code: CS112</span>
-          <p>Name: Intro into Medicine</p>
-          <p>Description: An Intro into the World of Medicine</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-    <div class="col s4 m4">
-      <div class="card green darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Code: CS113</span>
-          <p>Name: Intro into Law</p>
-          <p>Description: An Intro into Studying Law with a Case Study</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<% if current_student %>
   <div class="row">
-    
+    <% @courses.each do |course| %>
+      <div class="col s4 m4 ">
+        <div class="card green darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><%= course.short_name %></span>
+            <p><%= course.name %></p>
+            <p><%= course.description %></p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
+<% else %>
+  <div class="row">
+    <div class="card blue darken-4 ">
+      <div class="card-content white-text center">
+        <h1>Welcome to Imperial University</h1>
+        <h4>Create an Account or Login to Continue</h4>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
 
 

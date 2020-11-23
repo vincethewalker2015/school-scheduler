@@ -1,5 +1,24 @@
 class CoursesController < ApplicationController
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @courses = Course.all
+  end
+
   def new
+    @course = Course.new
+  end
+
+  def create 
+    @course = Course.new(course_params)
+    @course.student = current_user
+    if @course.save
+      flash[:notice] = "Course Added"
+      redirect_to course_path(@course)
+    else
+      flash[:notice] = "try that again!"
+      render 'new'
+    end
   end
 
   def show
@@ -9,11 +28,29 @@ class CoursesController < ApplicationController
   end
 
   def update 
+    if @course.update(course_params)
+      flash[:notice] = "Course has been Updated"
+      redirect_to course_path(@course)
+    else
+      render 'edit'
+    end
   end
 
-  def destroy 
+  def destroy
+    @course.destroy
+    flash[:notice] = "Course Has been Deleted"
+    redirect_to categories_path 
   end
 
-  def index
+  private
+
+  def course_params 
+    params.require(:course).permit(:short_name, :name, :description)
   end
+
+  def set_course 
+    @course = Course.find(params[:id])
+  end
+
+  
 end

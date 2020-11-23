@@ -2,16 +2,20 @@
   <ul id="dropdown1" class="dropdown-content blue darken-4 white">
     <span class="account-head">Account</span>
     <div class="dropdown-family">
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">three</a></li>
+      <li><%= link_to "Create Account", new_student_path, class: "white-text" %></li>
+      <li>
+        <% if current_student %> 
+            <%= link_to "Log Out", login_path, method: :delete, class: "white-text" %>
+        <% else %>
+              <%= link_to "Log in", login_path, class: "white-text" %>
+        <% end %>
+      </li>
     </div>
   </ul>
 
   <ul id="dropdown2" class="dropdown-content blue darken-4 white">
     <div class="dropdown-family">
-      <li><a href="#!">one</a></li>
+      <li><%= link_to "Create Account", new_student_path %></li>
       <li><a href="#!">two</a></li>
       <li class="divider"></li>
       <li><a href="#!">three</a></li>
@@ -21,11 +25,19 @@
   <nav>
     <div class="nav-wrapper blue darken-4">
       <div class="container">
-        <a href="#!" class="brand-logo">Imperial University</a>
+        <%= link_to "Imperial University", root_path, class: "brand-logo"%>
+        
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to "Courses", courses_path %></li>
-          <li><%= link_to "Enrollments", "#" %></li>
+         <% if current_student %>
+            <li>Student <%= current_student.name %></li>
+            <li><%= link_to "Courses", courses_path %></li>
+            <li><%= link_to "Enrollments", "#" %></li>
+          <% end %>
+          
+          
+          <!-- DROPDOWN -->
+
           <!-- DROPDOWN -->
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
@@ -36,7 +48,8 @@
   <ul class="sidenav white blue darken-4" id="mobile-demo">
     <li><%= link_to "Courses", courses_path %></li>
     <li><%= link_to "Enrollments", "#" %></li>
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li> 
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
+ 
   </nav>
 </header>

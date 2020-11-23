@@ -1,5 +1,9 @@
 @import "materialize";
 
+// Fonts
+// .white {
+//   color: white !important;
+// }
 
 // Keeping the Footer 'Sticky'
 
@@ -15,7 +19,11 @@ main {
 
 // Font color
 
-.white a{
+input{
+  color: #000;
+}
+
+button, input{
   color: #fff !important;
 }
 
@@ -44,4 +52,13 @@ ul .dropdown-family {
 
 .material-icons {
   color: white !important;
+}
+
+//Courses Index Page
+
+// Students
+
+//Form
+.sign-up-form {
+  padding-top: 15px;
 }

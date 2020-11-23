@@ -1,2 +1,22 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+
+<div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m12 ">
+      <div class="card blue darken-4 ">
+        <div class="card-content white-text">
+          <span class="card-title"><h3>Code: <%= @course.short_name %></h3></span>
+          <h4><%= @course.name %></h4>
+          <p><%= @course.description %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Edit", edit_course_path, class: "btn light-blue darken-4  waves-effect waves-light" %>
+          <%= link_to "All Courses", courses_path, class: "waves-effect waves-light btn orange darken-3" %>
+        </div>
+      </div>
+    </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
