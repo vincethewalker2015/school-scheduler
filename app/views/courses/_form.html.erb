@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row sign-up-form">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="header">New Course Form</h3>
+        <div class="row">
+          <%= form_for(@course, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+          <div class="input-field">
+          <div class="col s6">
+            <%= f.label :course_code %>
+          </div>
+          <div class="input-field">
+            <%= f.text_field :short_name, class: 'validate black-text', type: 'text', placeholder: "Course Short Code" %>
+          </div>
+          </div>
+          <div class="input-field">
+            <div class="col s6">
+              <%= f.label :name_of_course %>
+            </div>
+            <div class="col-md-8">
+              <%= f.text_field :name, class: 'validate black-text', placeholder: "Course Name" %>
+            </div>
+          </div>
+          <div class="input-field">
+            <div class="col s6">
+              <%= f.label :description %>
+            </div>
+            <div class="col-md-8">
+            <%= f.text_area :description, class: 'materialize-textarea', placeholder: "Add some description about the course" %>
+            </div>
+          </div>
+          <div class="input-field col s12">
+            <div>
+              <%= f.submit "Create course", class: "btn light-blue darken-4  waves-effect waves-light" %>
+              <%= link_to "Back to Home Page", root_path, class: "waves-effect waves-light btn orange darken-3" %>
+          </div>
+        </div>
+      <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
