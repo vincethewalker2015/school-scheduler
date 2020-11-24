@@ -15,6 +15,7 @@
         </div>
         <div class="card-action">
           <%= link_to "View Profile", student_path(student) %>
+          <%= link_to "Delete", student_path(student), method: :delete, data: {confirm: "Are you sure?"} %>
         </div>
       </div>
     </div>

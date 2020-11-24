@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
 
   def create 
     @course = Course.new(course_params)
-    @course.student = current_user
+    @course.student = current_student
     if @course.save
       flash[:notice] = "Course Added"
       redirect_to course_path(@course)
@@ -39,7 +39,7 @@ class CoursesController < ApplicationController
   def destroy
     @course.destroy
     flash[:notice] = "Course Has been Deleted"
-    redirect_to categories_path 
+    redirect_to courses_path 
   end
 
   private

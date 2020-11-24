@@ -36,11 +36,11 @@ class StudentsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @student.destroy
-  #   flash[:notice] = "Student Has been Deleted"
-  #   redirect_to categories_path 
-  # end
+  def destroy
+    @student.destroy
+    flash[:notice] = "Student Has been Deleted"
+    redirect_to students_path 
+  end
 
   private
 
