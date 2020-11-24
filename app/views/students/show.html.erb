@@ -9,8 +9,12 @@
         </div>
         <div class="card-action">
           <h4>Course Enrollments</h4>
-          <%= link_to "Edit Details", edit_student_path, class: "btn light-blue darken-4  waves-effect waves-light" %>
-          <%= link_to "All Students", students_path, class: "waves-effect waves-light btn orange darken-3" %>
+          <% if logged_in? && current_student.admin? %>
+            <%= link_to "Edit Details", edit_student_path, class: "btn light-blue darken-4  waves-effect waves-light" %>
+            <%= link_to "All Students", students_path, class: "waves-effect waves-light btn orange darken-3" %>
+          <% else %>
+            <%= link_to "View Courses", courses_path, class: "waves-effect waves-light btn orange darken-3" %>
+          <% end %>
         </div>
       </div>
     </div>

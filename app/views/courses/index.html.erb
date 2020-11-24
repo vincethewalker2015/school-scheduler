@@ -16,7 +16,10 @@
           </div>
           <div class="card-action">
             <%= link_to "View Course", course_path(course) %>
-            <%= link_to "Delete", course_path(course), method: :delete, data: {confirm: "Are You Sure?"} %>
+            <% if logged_in? && current_student.admin? %>
+              <%= link_to "Delete", course_path(course), method: :delete, data: {confirm: "Are You Sure?"} %>
+            <% end %>
+           
           </div>
         </div>
       </div>
