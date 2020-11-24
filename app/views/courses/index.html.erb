@@ -15,8 +15,8 @@
             <p><%= course.description %></p>
           </div>
           <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
+            <%= link_to "View Course", course_path(course) %>
+            <%= link_to "Delete", course_path(course), method: :delete, data: {confirm: "Are You Sure?"} %>
           </div>
         </div>
       </div>
