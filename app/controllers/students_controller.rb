@@ -1,5 +1,8 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, except: [:show]
+  
+  
 
   def index
     @students = Student.all
@@ -51,4 +54,7 @@ class StudentsController < ApplicationController
   def set_student 
     @student = Student.find(params[:id])
   end
+
+  
+
 end

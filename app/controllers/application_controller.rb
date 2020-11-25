@@ -8,4 +8,18 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_student
   end
+
+  def require_user 
+    if !logged_in?
+      flash[:notice] = "Please log in to view this page"
+      redirect_to root_path
+    end
+  end
+
+  def require_admin
+    if !(current_student.admin?)
+      flash[:note] = "Admin users only"
+      redirect_to root_path
+    end
+  end
 end
