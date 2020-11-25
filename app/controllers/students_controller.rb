@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
+  skip_before_action :require_user, only: [:new, :create]
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, except: [:show]
+  # before_action :require_admin, except: [:show, :index]
+  before_action :require_same_student, only: [:edit, :update, :destroy]
   
   
 
@@ -53,6 +55,13 @@ class StudentsController < ApplicationController
 
   def set_student 
     @student = Student.find(params[:id])
+  end
+
+  def require_same_student 
+    if current_student != @student
+      flash[:notice] = "You Can only Edit or Delete your own account"
+      redirect_to student_path(current_student)
+    end
   end
 
   

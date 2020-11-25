@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  # before_action :require_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_user
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
