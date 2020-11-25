@@ -2,24 +2,24 @@
     <div class="section">
       <div class="row">
         <div class="col s12 m12 ">
-      <div class="card blue darken-4 ">
-        <div class="card-content white-text">
-          <span class="card-title"><h3>Student: <%= @student.name %></h3></span>
-          <p><%= @student.email %></p>
-        </div>
-        <div class="card-action">
-          <h4>Course Enrollments</h4>
-          <% if logged_in? && current_student.admin? %>
-            <%= link_to "Edit Details", edit_student_path, class: "btn light-blue darken-4  waves-effect waves-light" %>
-            <%= link_to "All Students", students_path, class: "waves-effect waves-light btn orange darken-3" %>
-          <% else %>
-            <%= link_to "View Courses", courses_path, class: "waves-effect waves-light btn orange darken-3" %>
-          <% end %>
+          <div class="card blue darken-4 ">
+            <div class="card-content white-text">
+              <span class="card-title"><h3>Student: <%= @student.name %></h3></span>
+              <p><%= @student.email %></p>
+            </div>
+            <div class="card-action">
+              <h4>Course Enrollments</h4>
+            </div>
+          </div>
+              <% if logged_in? && current_student.admin? && !@student.admin? %>
+                <%= link_to "All Students", students_path, class: "waves-effect waves-light btn orange darken-3" %>
+                <%= link_to "Edit your details", edit_student_path, class: "btn light-blue darken-4  waves-effect waves-light" %>
+                <%= link_to "Delete Student", student_path, method: :delete, class: "btn red darken-4  waves-effect waves-light" %>
+              <% else %>
+                <%= link_to "Edit your details", edit_student_path, class: "btn light-blue darken-4  waves-effect waves-light" %>
+                <%= link_to "View Courses", courses_path, class: "waves-effect waves-light btn orange darken-3" %>
+              <% end %>
         </div>
       </div>
     </div>
-      </div>
-
-    </div>
-    <br><br>
   </div>
