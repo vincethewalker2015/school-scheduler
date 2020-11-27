@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @student_courses = StudentCourse.all
   end
 
   def new

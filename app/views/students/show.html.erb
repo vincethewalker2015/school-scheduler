@@ -4,11 +4,25 @@
         <div class="col s12 m12 ">
           <div class="card blue darken-4 ">
             <div class="card-content white-text">
-              <span class="card-title"><h3>Student: <%= @student.name %></h3></span>
-              <p><%= @student.email %></p>
+              <span class="card-title"><h3><%= @student.name %></h3></span>
+              <h4><%= @student.email %></h4>
             </div>
             <div class="card-action">
-              <h4>Course Enrollments</h4>
+            <% if @student.courses.count != 0 %>
+              <h5><span class="card-content white-text">Enrolled to: <%= pluralize(@student.courses.count, "course")if @student.courses %>:</span></h5>
+                <ul>
+                  <div class="card-content white-text">
+                    <% @student.courses.each do |course| %>
+                        <li class="btn orange darken-3 course-titles"><%= course.name %></li>
+                    <% end %>
+                  </div>
+                </ul>
+              <% else %>
+                <div class="card-content white-text">
+                  <h4>You have not Enrolled into any courses yet</h4>
+                </div>
+              <% end %>
+             
             </div>
           </div>
               <% if logged_in? && current_student.admin? && !@student.admin? %>

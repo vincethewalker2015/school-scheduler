@@ -17,6 +17,18 @@ main {
   flex: 1 0 auto;
 }
 
+// Page Titles
+.page-title {
+  color: white;
+  background: #0D47A1 !important;
+  font-size: 28px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 3px;
+}
+
 // Font color
 
 input{
@@ -61,4 +73,10 @@ ul .dropdown-family {
 //Form
 .sign-up-form {
   padding-top: 15px;
+}
+
+//Student Courses Enrolled
+ .course-titles {
+  margin-left: 5px;
+  margin-top: 5px;
 }
